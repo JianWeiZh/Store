@@ -1,6 +1,6 @@
 {
   "name": "store-collection",
-  "version": "1.0.0",
+  "version": "1.0.1-0",
   "description": "A collection of Storage operations",
   "main": "dist/store.js",
   "scripts": {
