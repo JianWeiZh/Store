@@ -73,7 +73,7 @@ VhStorage.remove(key, isSession)
 VhStorage.removeAll()
 /**
  * removeAll 方法：
- *   删除所有带有prekey字段的存储，包含sessionStorage和localStorage
+ *   删除所有带有prekey字段的存储（必须经过set方法存储的数据），包含sessionStorage和localStorage
 */
 
 Store.checkStorage(type)
