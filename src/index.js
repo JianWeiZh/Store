@@ -34,8 +34,11 @@ function storageAvailable(type) {
 class Store {
   constructor(preKey) {
     this.preKey = preKey
-    this.sessionKeys = {}
-    this.localKeys = {}
+    const FullKey = this.FullKey = this._returnFullKey('_StoreKeys')
+    const SessionList = JSON.parse(sessionStorage[FullKey] || '{}') 
+    const LocalList = JSON.parse(localStorage[FullKey] || '{}')
+    this.sessionKeys = {...SessionList}
+    this.localKeys = {...LocalList}
     this.sessionTime = ''
     this.localTime = ''
   }
@@ -63,6 +66,10 @@ class Store {
     }
     store[fullKey] = value
     isSession ? this.sessionKeys[key] = 1 : this.localKeys[key] = 1
+    this._setStoreFullKey(store, isSession)
+  }
+  _setStoreFullKey (store, isSession) {
+    store[this.FullKey] = JSON.stringify(isSession ? this.sessionKeys : this.localKeys)
   }
   _getOnly (key, isSession) {
     const {store, fullKey} = this._returnKeyAndType(key, isSession)
@@ -77,6 +84,7 @@ class Store {
     const {store, fullKey} = this._returnKeyAndType(key, isSession)
     store.removeItem(fullKey)
     isSession ? delete this.sessionKeys[key] : delete this.localKeys[key]
+    this._setStoreFullKey(store, isSession)
   }
   _notStringAndArray (val, warnString) {
     const keyIsString = isString(val)

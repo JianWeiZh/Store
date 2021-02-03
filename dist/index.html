@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="store.js"></script>
+  <script>
+    const VhStorage = new Store('vhall-')
+    const VssStorage = new Store('vss_')
+    // const Obj = {
+    //   a: 1,
+    //   b: [1,2,3],
+    //   c: {
+    //     a: 5,
+    //     b: 6
+    //   },
+    //   d: null,
+    //   e: undefined,
+    //   f: '',
+    //   g: 'string 123',
+    //   h: true,
+    //   i: false,
+    //   j: function () {
+    //     console.log(1)
+    //   }
+    // }
+    // VssStorage.set(Object.keys(Obj), Object.values(Obj))
+    // VssStorage.set(Object.keys(Obj), Object.values(Obj), true)
+    // VhStorage.set(Object.keys(Obj), Object.values(Obj))
+    // VhStorage.set(Object.keys(Obj), Object.values(Obj), true)
+    // console.log(VhStorage.get(Object.keys(Obj)))
+    // console.log(Object.keys(sessionStorage), Object.keys(localStorage))
+    // VssStorage.remove('a')
+    setTimeout(() => {
+      VssStorage.removeAll()
+    }, 5000)
+  </script>
+</body>
+</html>
