@@ -2,12 +2,26 @@
   "name": "store-collection",
   "version": "1.0.2",
   "description": "A collection of Storage operations",
+  "keywords": [
+    "storage",
+    "store",
+    "localStorage",
+    "sessionStorage"
+  ],
   "main": "dist/store.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c"
   },
-  "author": "jianwei.zhang",
+  "author": "jianwei.zhang <zjw393854452@163.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JianWeiZh/Store"
+  },
+  "bugs": {
+    "url": "https://github.com/JianWeiZh/Store/issues"
+  },
+  "homepage": "https://github.com/JianWeiZh/Store",
   "license": "MIT",
   "dependencies": {
     "rollup": "^2.38.3"
